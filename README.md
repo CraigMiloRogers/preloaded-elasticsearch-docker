@@ -45,10 +45,12 @@ This repository removes the mountable external data directory from the
 elasticsearch docker image build. It provides two recipes for building
 an elasticsearch docker image with preloaded data.
 
-#### Drop-in elasticsearch data recipe
+#### Drop-in data recipe
 
 If you have an existing elasticsearch data directory tree, you can drop it in
-place when building the elasticsearch Docker image.
+place when building the elasticsearch Docker image. You save and compress the
+elasticsearch Docker image with the drop-in preloaded data, and run it as
+shown in the Usage section, above.
 
 You can obtain an elasticsearch data directory tree by extracting data from a
 running (but quiescent) elasticsearch Docker container with:
@@ -63,10 +65,7 @@ where ${CONTAINER} is the ID of the running Docker container as obtained from:
 docker ps
 ```
 
-The elasticsearch Docker image with preloaded data can be run as shown in the
-Usage section, above.
-
-#### Loading elasticsearch data recipe
+#### Loaded data recipe
 
 This is a more complex recipe. You first build a modified elasticsearch Docker
 image, without the mountable external data columne and without any prelaoded

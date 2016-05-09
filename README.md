@@ -62,13 +62,19 @@ where ${CONTAINER} is the ID of the running Docker container as obtained from:
 docker ps
 ```
 
+The elasticsearch Docker image with preloaded data can be run as shown in the
+Usage section, above.
+
 #### Loading elasticsearch data
 
 This is a more complex recipe. You first build a modified elasticsearch Docker
 image, without the mountable external data columne and without any prelaoded
-data.  You run that image inside a container, and load data into it. You
+data.  You run that image inside a Docker container and load data into it. You
 commit the container to a new docker image, and save and compress the
-new image with preloaded data.
+new image with the preloaded data.
+
+The elasticsearch Docker image with preloaded data can be run as shown in the
+Usage section, above.
 
 
 ### TODOs

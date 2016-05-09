@@ -29,7 +29,7 @@ docker load -i preloaded-elasticsearch.tar.gz
 docker run -d -p 9200:9200 -p 9300:9300 preloaded-elasticsearch
 ```
 
-After few seconds, open `http://<host>:9200` to interact with elasticsearch.
+After a few seconds, open `http://<host>:9200` to interact with elasticsearch.
 
 ### Discussion
 

@@ -2,6 +2,8 @@
 
 echo "Building elasticsearch for Docker"
 docker build -t elasticsearch-for-loading-data build-for-loading-data/
+# See build-with-dropin-data/Dockerfile for more details.
+
 echo "Running elasticsearch in Docker"
 docker run -d -p 9200:9200 -p 9300:9300 elasticsearch-for-loading-data
 

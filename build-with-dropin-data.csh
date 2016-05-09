@@ -9,6 +9,7 @@ endif
 
 echo "Building elasticsearch for Docker"
 docker build -t preloaded-elasticsearch build-with-dropin-data/
+# See build-with-dropin-data/Dockerfile for more details.
 
 echo "Saving the preloaded elasticsearch Docker image."
 docker save -o preloaded-elasticsearch.tar preloaded-elasticsearch

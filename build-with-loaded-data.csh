@@ -1,9 +1,12 @@
 #! /bin/csh
 
+echo "Building elasticsearch for Docker"
 docker build -t elasticsearch-for-loading-data build-for-loading-data/
+echo "Running elasticsearch in Docker"
 docker run -d -p 9200:9200 -p 9300:9300 elasticsearch-for-loading-data
 
 # Sleep to allow the elasticsearch containier to initialize:
+echo "Sleep for 10 seconds."
 sleep 10
 
 # Check the status of the elasticsearch container:
@@ -41,6 +44,7 @@ curl 'http://localhost:9200/_cluster/health?pretty'
 
 # Stop the container, commit it to an image, save and compress the image;
 
+echo "Finding the elasticsearch container."
 set CONTAINER=`docker ps -a | fgrep elasticsearch-for-loading-data | cut -f 1 -d " "`
 
 if ${#CONTAINER} != 1 then
@@ -48,10 +52,13 @@ if ${#CONTAINER} != 1 then
   exit 1
 endif
 
+echo "Stopping elasicsearch and saving it."
 docker stop ${CONTAINER}
 docker commit ${CONTAINER} preloaded-elasticsearch
-
 docker save -o preloaded-elasticsearch.tar preloaded-elasticsearch
 
+echo "Compressing the saved elasticsearch Docker image."
 # Use --force to overwrite any existing file:
 gzip --force --best preloaded-elasticsearch.tar
+
+echo "Done."

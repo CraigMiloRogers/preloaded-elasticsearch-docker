@@ -76,6 +76,9 @@ new image with the preloaded data.
 The elasticsearch Docker image with preloaded data can be run as shown in the
 Usage section, above.
 
+The ```curl``` command is used to check the status of elasticsearch before and
+after data is loaded into it. There is an example, in comments, of how to use
+```curl``` to load JSON Lines data into elasticsearch.
 
 ### TODOs
 

@@ -82,3 +82,6 @@ Usage section, above.
 1. This repository currently contains a snapshot of the [dockerfile/elasticsearch](https://github.com/dockerfile/elasticsearch) repository. Perhaps it should be linked to the parent repository?
 
 2. Is there a procedure that should be followed for shutting down eleasticsearch in a running Docker container before extracting data from the container or committing the container to a new Docker image?
+
+3. The scripts appear to use an elasticsearch.org signing key. Is this really
+allowable, now that I've modified the scripts?

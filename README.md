@@ -85,3 +85,5 @@ Usage section, above.
 
 3. The scripts appear to use an elasticsearch.org signing key. Is this really
 allowable, now that I've modified the scripts?
+
+4. The scripts should check for failures and abort with appropriate feedback.

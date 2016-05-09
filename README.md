@@ -23,7 +23,8 @@ recipes for preloading data into the Docker image.
 
 ### Usage
 
-```docker load -i preloaded-elasticsearch.tar.gz
+```
+docker load -i preloaded-elasticsearch.tar.gz
 docker run -d -p 9200:9200 -p 9300:9300 preloaded-elasticsearch
 ```
 
@@ -51,12 +52,14 @@ place when building the elasticsearch Docker image.
 For esample, you can extract data from a running (but quiescent) elasticsearch
 Docker container with:
 
-```docker cp ${CONTAINER}/usr/share/elasticsearch/data extracted-data
+```
+docker cp ${CONTAINER}/usr/share/elasticsearch/data extracted-data
 ```
 
 where ${CONTAINER} is the ID of the running Docker container as obtained from:
 
-```docker ps
+```
+docker ps
 ```
 
 #### Loading elasticsearch data

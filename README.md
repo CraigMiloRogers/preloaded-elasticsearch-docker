@@ -92,3 +92,5 @@ allowable, now that I've modified the scripts?
 4. The scripts should check for failures and abort with appropriate feedback.
 
 5. The scripts should be converted from csh to bash for portability.
+
+6. These TODOs should be converted to github issues.

@@ -68,7 +68,7 @@ docker ps
 #### Loaded data recipe
 
 This is a more complex recipe. You first build a modified elasticsearch Docker
-image, without the mountable external data columne and without any prelaoded
+image, without the mountable external data volume and without preloaded
 data.  You run that image inside a Docker container and load data into it. You
 commit the container to a new docker image, and save and compress the
 new image with the preloaded data.

@@ -1,9 +1,10 @@
 ## Preloaded Elasticsearch Dockerfile
 
-This repository contains a modified **Dockerfile** of [Elasticsearch](http://www.elasticsearch.org/)
-based on  [Docker](https://www.docker.com/)'s [automated build](https://registry.hub.docker.com/u/dockerfile/elasticsearch/)
-published to the public [Docker Hub Registry](https://registry.hub.docker.com/).  It contains some simple
-recipes for preloading data into the Docker image.
+This repository contains a modified **Dockerfile** for building [elasticsearch](http://www.elasticsearch.org/)
+based on [Docker](https://www.docker.com/)'s [automated build](https://registry.hub.docker.com/u/dockerfile/elasticsearch/)
+published to the public [Docker Hub Registry](https://registry.hub.docker.com/).  It contains simple
+recipes for preloading data into the Docker image and running elasticsearch
+without external persistent data files.
 
 ### Base Docker Image
 
@@ -15,7 +16,7 @@ recipes for preloading data into the Docker image.
 
 2. Clone this repository.
 
-3. Select a preloaded data recipe.
+3. Select a preloaded data recipe (see below).
 
 4. Build the elasticsearch Docker image with your preloaded data.
 
@@ -44,13 +45,13 @@ This repository removes the mountable external data directory from the
 elasticsearch docker image build. It provides two recipes for building
 an elasticsearch docker image with preloaded data.
 
-#### Drop-in elasticsearch data
+#### Drop-in elasticsearch data recipe
 
 If you have an existing elasticsearch data directory tree, you can drop it in
 place when building the elasticsearch Docker image.
 
-For esample, you can extract data from a running (but quiescent) elasticsearch
-Docker container with:
+You can obtain an elasticsearch data directory tree by extracting data from a
+running (but quiescent) elasticsearch Docker container with:
 
 ```
 docker cp ${CONTAINER}/usr/share/elasticsearch/data extracted-data
@@ -65,7 +66,7 @@ docker ps
 The elasticsearch Docker image with preloaded data can be run as shown in the
 Usage section, above.
 
-#### Loading elasticsearch data
+#### Loading elasticsearch data recipe
 
 This is a more complex recipe. You first build a modified elasticsearch Docker
 image, without the mountable external data columne and without any prelaoded
